@@ -4,15 +4,16 @@ public class Position {
 	
 	private int row;
 	private int column;
-	public int getRow() {
-		return row;
-	}
 	
 	public Position(int row, int column) {
 		this.row = row;
 		this.column = column;
 	}
 
+	public int getRow() {
+		return row;
+	}
+	
 	public void setRow(int row) {
 		this.row = row;
 	}
@@ -29,6 +30,4 @@ public class Position {
 	public String toString() {
 		return row + ", " + column;
 	}
-
-	
 }
