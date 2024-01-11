@@ -6,8 +6,8 @@ public class Board {
 	private int columns;
 	private Piece[][] pieces;
 	
+	//Initialize a generic board thinking about layer structure
 	public Board(int rows, int columns) {
-		//Makeing denfensive programation
 		if(rows < 1 || columns < 1) {
 			throw new BoardException("Error creating board: there must be at least 1 row and 1 column");
 		}
@@ -20,16 +20,8 @@ public class Board {
 		return rows;
 	}
 
-	public void setRows(int rows) {
-		this.rows = rows;
-	}
-
 	public int getColumns() {
 		return columns;
-	}
-
-	public void setColumns(int columns) {
-		this.columns = columns;
 	}
 	
 	public Piece piece(int row, int column) {
@@ -38,7 +30,8 @@ public class Board {
 		}
 		return pieces[row][column];
 	}
-	//overloading of the above method; above = escrito anteriormente
+	
+	//Overloading of the above method; above = escrito anteriormente
 	public Piece piece(Position position) {
 		if(!positionExists(position)) {
 			throw new BoardException("Position not on the board");
@@ -46,6 +39,7 @@ public class Board {
 		return pieces[position.getRow()][position.getColumn()];
 	}
 	
+	//Places the piece in the piece matrix; place = colocar
 	public void placePiece(Piece piece, Position position) {
 		//if this true
 		if(thereIsAPiece(position)) {

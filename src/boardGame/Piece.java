@@ -1,6 +1,7 @@
 package boardGame;
 
 public abstract class Piece {
+	
 	protected Position position;
 	private Board board;
 	
@@ -17,9 +18,11 @@ public abstract class Piece {
 	
 	//HookMethods = funcao concreta puxando uma funcao abstrata
 	public boolean possibleMove(Position position) {
+		//If the move is possible, it go abstract boolean array according to piece a type 
 		return possibleMoves()[position.getRow()][position.getColumn()];
 	}
 	
+	//Mark the possible moves with true or false
 	public boolean isThereAnyPossibleMove() {
 		boolean[][] mat = possibleMoves();
 		
